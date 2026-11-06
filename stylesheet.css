@@ -850,3 +850,39 @@ html { scroll-padding-top: 125px; }
 .header-cta { background: var(--gold); color: var(--bg); border-color: var(--gold); font-family: var(--body); font-weight: 700; cursor: pointer; white-space: nowrap; }
 .header-cta:hover { background: #dfbe7d; }
 .header-cta:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* Mobile contact shortcuts after scrolling past the main booking button */
+.header-instagram { display: none; }
+@media (max-width: 760px) {
+  .site-header.past-main-booking nav { display: none; }
+  .site-header.past-main-booking .header-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-left: auto;
+    color: var(--paper);
+    font-size: 11px;
+    min-height: 44px;
+  }
+  .header-instagram svg { width: 21px; height: 21px; }
+  .site-header.past-main-booking .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+  .site-header.past-main-booking .header-cta span { margin-left: 10px; }
+  .header-instagram:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+}
+@media (max-width: 340px) {
+  .site-header.past-main-booking .header-instagram > span { display: none; }
+}
+
+/* Footer brand logo */
+.footer-logo { display: flex; align-items: center; flex-shrink: 0; }
+.footer-logo img { display: block; width: 80px; height: 65px; object-fit: contain; }
+@media (max-width: 620px) { .footer-logo img { width: 65px; height: 52px; } }
