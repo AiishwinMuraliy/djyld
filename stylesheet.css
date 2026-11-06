@@ -683,3 +683,17 @@ footer>a:not(.brand){
 @media (max-width: 620px) {
   .hero-copy .booking-cta { width: 100%; min-width: 0; max-width: 360px; }
 }
+
+/* Seamless scrolling gold banner */
+.ticker { display: block; padding: 17px 0; }
+.ticker-track { display: flex; width: max-content; animation: ticker-scroll 32s linear infinite; }
+.ticker-group { display: flex; flex-shrink: 0; align-items: center; justify-content: space-around; min-width: 100vw; gap: 70px; padding: 0 35px; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 620px) {
+  .ticker { padding: 12px 0; }
+  .ticker-group { gap: 35px; padding: 0 17.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
