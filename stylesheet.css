@@ -641,24 +641,18 @@ footer>a:not(.brand){
   .wedding-story:last-child { max-width: 326px; }
 }
 
-/* Native couples photo carousel */
+/* Continuously scrolling couples photo strip */
 .couples-gallery { grid-column: 1 / -1; min-width: 0; margin-top: 30px; border-top: 1px solid var(--line); padding-top: 35px; }
 .couples-heading .eyebrow { color: var(--gold); font-size: 9px; letter-spacing: 1.5px; }
 .couples-heading h3 { font-family: var(--display); font-size: 36px; font-weight: 600; margin: 12px 0; }
 .couples-heading p:last-child { color: var(--muted); font-size: 13px; line-height: 1.8; }
-.couples-track { position: relative; display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: var(--gold) var(--bg); padding: 10px 0 16px; }
+.couples-track { width: var(--strip-width, 100vw); margin-inline: calc((100% - var(--strip-width, 100vw)) / 2); position: relative; display: flex; gap: 0; overflow-x: auto; overscroll-behavior-x: contain; touch-action: pan-x pan-y; scrollbar-width: none; padding: 10px 0 0; }
+.couples-track::-webkit-scrollbar { display: none; }
 .couples-track:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
-.couple-slide { flex: 0 0 calc((100% - 40px) / 3); min-width: 0; margin: 0; scroll-snap-align: start; }
-.couple-slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; background: #22221c; }
-.couples-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 15px; }
-.couples-controls[hidden] { display: none; }
-.couples-controls button { border: 1px solid var(--gold); background: transparent; color: var(--gold); width: 44px; height: 44px; border-radius: 50%; font-size: 21px; cursor: pointer; }
-.couples-controls button:hover:not(:disabled) { background: var(--gold); color: var(--bg); }
-.couples-controls button:disabled { opacity: .3; cursor: default; }
-.couples-controls button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-.carousel-status { font-size: 11px; color: var(--muted); min-width: 80px; text-align: center; }
-@media (max-width: 900px) { .couple-slide { flex-basis: calc((100% - 20px) / 2); } }
-@media (max-width: 620px) { .couple-slide { flex-basis: 100%; } .couples-gallery { margin-top: 0; } }
+.couple-slide { flex: 0 0 25%; min-width: 0; margin: 0; }
+.couple-slide img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: #22221c; }
+@media (max-width: 900px) { .couple-slide { flex-basis: 40%; } }
+@media (max-width: 620px) { .couple-slide { flex-basis: 75%; } .couples-gallery { margin-top: 0; } }
 
 .vlog-days { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 18px; font-size: 14px; line-height: 1.8; }
 .vlog-days > span { color: var(--muted); }
