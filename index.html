@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./stylesheet.css?v=13">
+  <link rel="stylesheet" href="./stylesheet.css?v=14">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,7 +34,7 @@
           <p class="eyebrow">GOOD MUSIC. GREAT ENERGY.</p>
           <h1 id="hero-title">COMING TO<br>A SPEAKER<br><span>NEAR YOU.</span></h1>
           <p class="hero-description">Hi! I’m Aiishwin Muraliy, aka DJ YLD (pronounced “DJ Wild”). Welcome to my world of good music and great vibes. I can’t wait to turn up your next celebration!</p>
-          <a class="button button-gold booking-cta" href="https://rleonline.com/booking/" target="_blank" rel="noopener noreferrer">BOOK NOW <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <button class="button button-gold booking-cta" type="button" data-open-booking aria-haspopup="dialog" aria-controls="booking-dialog">BOOK NOW <span aria-hidden="true">↗</span></button>
         </div>
         <figure class="hero-photo">
           <img class="hero-photo-image" src="Images/dj-yld-live.jpg" alt="DJ YLD performing behind the decks in sunglasses, with his logo on the laptop" width="1920" height="1280" fetchpriority="high">
@@ -132,6 +132,23 @@
 
   <footer><a class="brand" href="#" aria-label="DJ YLD back to top">DJ YLD<span class="brand-dot" aria-hidden="true">●</span></a><p>Coming to a speaker near you.</p><a href="https://linktr.ee/djyld" target="_blank" rel="noopener noreferrer">All links <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><div class="footer-socials" aria-label="DJ YLD contact and social links"><a href="mailto:djyld.rle@gmail.com">Email <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/djyld_/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
 <a href="https://open.spotify.com/artist/5kA29lKxKISuqVZIXEOHAg" target="_blank" rel="noopener noreferrer">Spotify <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div><span class="copyright">© DJ YLD</span></footer>
+  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title" aria-describedby="booking-description">
+    <button class="booking-close" type="button" aria-label="Close booking options">×</button>
+    <p class="eyebrow">LET’S MAKE IT A NIGHT TO REMEMBER</p>
+    <h2 id="booking-title">Your party.<br><em>Let’s talk.</em></h2>
+    <p id="booking-description">Pick your way to get in touch. Send me your event date, location, and a little about your celebration.</p>
+    <div class="booking-options">
+      <a href="mailto:djyld.rle@gmail.com?subject=DJ%20YLD%20Booking%20Inquiry" class="booking-option">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="m3 6 9 7 9-7"></path></svg>
+        <strong>Email</strong><span>Let’s plan your event <span aria-hidden="true">↗</span></span>
+      </a>
+      <a href="https://www.instagram.com/djyld_/" target="_blank" rel="noopener noreferrer" class="booking-option">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+        <strong>Instagram</strong><span>Send me a DM <span aria-hidden="true">↗</span></span><span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </dialog>
+  <script src="booking.js" defer></script>
   <script src="carousel.js" defer></script>
 </body>
 </html>
