@@ -1,10 +1,14 @@
 (() => {
   const dialog = document.querySelector('#booking-dialog');
-  const trigger = document.querySelector('[data-open-booking]');
-  if (!dialog || !trigger) return;
-  trigger.addEventListener('click', () => {
-    dialog.showModal();
-    document.body.classList.add('booking-open');
+  const triggers = document.querySelectorAll('[data-open-booking]');
+  if (!dialog || !triggers.length) return;
+  let activeTrigger;
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      activeTrigger = trigger;
+      dialog.showModal();
+      document.body.classList.add('booking-open');
+    });
   });
   dialog.querySelector('.booking-close').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (event) => {
@@ -15,6 +19,6 @@
   });
   dialog.addEventListener('close', () => {
     document.body.classList.remove('booking-open');
-    trigger.focus();
+    activeTrigger?.focus();
   });
 })();
