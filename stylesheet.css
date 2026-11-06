@@ -729,3 +729,53 @@ body.booking-open { overflow: hidden; }
   .wedding-grid { grid-template-columns: 1fr; }
   .wedding-story[aria-labelledby="wedding-story-toronto"] { width: 100%; max-width: 540px; }
 }
+
+/* Header brand logo */
+.header-logo { display: flex; align-items: center; flex-shrink: 0; }
+.header-logo img { display: block; width: 95px; height: 72px; object-fit: contain; }
+@media (max-width: 620px) { .header-logo img { width: 72px; height: 55px; } }
+
+/* Entrance animation for the main banner */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > .eyebrow,
+  .hero-line,
+  .hero-description,
+  .hero-copy > .booking-cta { animation: hero-copy-enter 1.8s cubic-bezier(.22, 1, .36, 1) both; }
+  .hero-copy > .eyebrow { animation-delay: 0s; }
+  .hero-line:nth-child(1) { animation-delay: .15s; }
+  .hero-line:nth-child(2) { animation-delay: .4s; }
+  .hero-line:nth-child(3) { animation-delay: .65s; }
+  .hero-description { animation-delay: .9s; }
+  .hero-copy > .booking-cta { animation-delay: 1.15s; }
+  .hero-photo { animation: hero-photo-enter 2s cubic-bezier(.22, 1, .36, 1) .15s both; }
+  @keyframes hero-copy-enter {
+    from { opacity: 0; transform: translateX(-100vw); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes hero-photo-enter {
+    from { opacity: 0; transform: translateX(100vw); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+}
+
+.hero-line { display: block; color: var(--paper); }
+.hero-line-gold { color: var(--gold); }
+
+/* Reveal content as it enters the viewport */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .75s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
+  }
+  .scroll-reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .wedding-intro > :nth-child(2).scroll-reveal,
+  .wedding-story:nth-child(2).scroll-reveal,
+  .release-copy.scroll-reveal,
+  .about-content > :nth-child(2).scroll-reveal,
+  .photo-grid > :nth-child(2).scroll-reveal { transition-delay: .12s; }
+  .wedding-story:nth-child(3).scroll-reveal { transition-delay: .2s; }
+}
+@media print {
+  .scroll-reveal { opacity: 1 !important; transform: none !important; }
+}
