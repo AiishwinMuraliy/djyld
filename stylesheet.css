@@ -845,11 +845,11 @@ html { scroll-padding-top: 125px; }
 .header-cta:hover { background: #dfbe7d; }
 .header-cta:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
-/* Mobile contact shortcuts after scrolling past the main booking button */
+/* Mobile contact shortcuts */
 .header-instagram { display: none; }
 @media (max-width: 760px) {
-  .site-header.past-main-booking nav { display: none; }
-  .site-header.past-main-booking .header-instagram {
+  .site-header nav { display: none; }
+  .site-header .header-instagram {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -860,7 +860,7 @@ html { scroll-padding-top: 125px; }
     min-height: 44px;
   }
   .header-instagram svg { width: 21px; height: 21px; }
-  .site-header.past-main-booking .header-cta {
+  .site-header .header-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -869,14 +869,80 @@ html { scroll-padding-top: 125px; }
     border-radius: 12px;
     font-size: 11px;
   }
-  .site-header.past-main-booking .header-cta span { margin-left: 10px; }
+  .site-header .header-cta span { margin-left: 10px; }
   .header-instagram:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 }
 @media (max-width: 340px) {
-  .site-header.past-main-booking .header-instagram > span { display: none; }
+  .site-header .header-instagram > span { display: none; }
 }
 
 /* Footer brand logo */
 .footer-logo { display: flex; align-items: center; flex-shrink: 0; }
 .footer-logo img { display: block; width: 80px; height: 65px; object-fit: contain; }
 @media (max-width: 620px) { .footer-logo img { width: 65px; height: 52px; } }
+
+/* Expandable navigation in the mobile contact header */
+.header-menu-toggle { display: none; }
+@media (max-width: 760px) {
+  .site-header .header-logo { display: flex; flex-shrink: 0; }
+  .site-header .header-instagram { margin-left: auto; width: 36px; min-width: 36px; flex-shrink: 0; }
+  .site-header .header-instagram > span { display: none; }
+  .site-header { gap: 8px; }
+  .site-header .header-cta { margin-left: 0; }
+  .site-header .header-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--paper);
+    cursor: pointer;
+  }
+  .header-menu-toggle span { width: 22px; height: 2px; background: currentColor; }
+  .header-menu-toggle:hover { background: #ffffff10; }
+  .header-menu-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .site-header.menu-open nav {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 0;
+    padding: 12px;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--bg);
+    box-shadow: 0 12px 30px #0005;
+    font-size: 14px;
+  }
+  .site-header.menu-open nav a { display: block; width: 100%; text-align: center; padding: 14px 16px; }
+}
+
+/* Centered desktop navigation with contact actions on the right */
+.header-actions { display: contents; }
+@media (min-width: 761px) {
+  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; }
+  .site-header .header-logo { justify-self: start; }
+  .site-header nav { margin-left: 0; align-items: center; gap: clamp(16px, 2.5vw, 35px); }
+  .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+  .site-header .header-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+  .header-instagram svg { width: 21px; height: 21px; }
+  .site-header .header-instagram > span { display: none; }
+  .header-instagram:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+}

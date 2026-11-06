@@ -12,20 +12,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheet.css?v=28">
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand header-logo" href="#" aria-label="DJ YLD home"><img src="Images/white_logo.png" alt="DJ YLD"></a>
-    <nav aria-label="Main navigation">
-      <a href="#weddings">Weddings</a>
+    <nav id="header-navigation" aria-label="Main navigation">
+      <a class="header-home" href="#top">Home</a>
+      <a href="#vlogs">Weddings</a>
       <a href="#music">Music</a>
-      <a href="#couples">Photos</a>
+      <a href="#photos">Photos</a>
     </nav>
+    <div class="header-actions">
     <a class="header-instagram" href="https://www.instagram.com/djyld_/" target="_blank" rel="noopener noreferrer" aria-label="DJ YLD on Instagram (opens in a new tab)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
       <span>Instagram</span>
     </a>
     <button class="header-cta" type="button" data-open-booking aria-haspopup="dialog" aria-controls="booking-dialog">BOOK NOW <span aria-hidden="true">↗</span></button>
+    </div>
+    <button class="header-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="header-navigation"><span></span><span></span><span></span></button>
   </header>
 
   <main id="main">
@@ -54,7 +58,7 @@
         <div><p class="wedding-kicker">YOUR PEOPLE. YOUR NIGHT. YOUR SOUNDTRACK.</p><h2 id="weddings-title">Say “I do.”<br>Then <em>turn it up.</em></h2></div>
         <div class="wedding-description"><p>Your wedding deserves a reception that feels like you. The singalongs, the hands in the air, the one-more-song moments. That’s where I come in.</p><p>Wedding receptions are at the heart of what I do. From Michigan to Mexico, I bring that energy to celebrations at home and away.</p><a class="button button-gold" href="https://www.instagram.com/djyld_/" target="_blank" rel="noopener noreferrer">Let’s talk about your wedding <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><p class="wedding-inquiry-note">Send me your date and destination on Instagram.</p></div>
       </div>
-      <div class="wedding-films-heading"><h3>The reception speaks for itself.</h3><p>Real celebrations. Meet me on the dance floor.</p></div>
+      <div class="wedding-films-heading" id="vlogs"><h3>The reception speaks for itself.</h3><p>Real celebrations. Meet me on the dance floor.</p></div>
       <div class="wedding-grid">        <article class="wedding-story" aria-labelledby="wedding-story-0">
           <p class="eyebrow">DESTINATION / MEXICO</p>
           <h3 id="wedding-story-0">Mexico reception vlog</h3>
