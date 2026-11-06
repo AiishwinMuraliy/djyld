@@ -716,3 +716,16 @@ body.booking-open { overflow: hidden; }
 .booking-option:hover { background: #c9a45c12; border-color: var(--gold); }
 .booking-dialog a:focus-visible, .booking-dialog button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @media (max-width: 480px) { .booking-dialog { padding: 38px 22px 26px; } .booking-dialog h2 { font-size: 56px; } .booking-options { gap: 10px; } }
+
+/* Two vlog cards per row, with Toronto centered below */
+.wedding-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.wedding-story[aria-labelledby="wedding-story-toronto"] {
+  grid-column: 1 / -1;
+  width: calc((100% - 32px) / 2);
+  max-width: none;
+  justify-self: center;
+}
+@media (max-width: 760px) {
+  .wedding-grid { grid-template-columns: 1fr; }
+  .wedding-story[aria-labelledby="wedding-story-toronto"] { width: 100%; max-width: 540px; }
+}
