@@ -741,7 +741,7 @@ body.booking-open { overflow: hidden; }
   .hero-line:nth-child(3) { animation-delay: .65s; }
   .hero-description { animation-delay: .9s; }
   .hero-copy > .booking-cta { animation-delay: 1.15s; }
-  .hero-photo { animation: hero-photo-enter 2s cubic-bezier(.22, 1, .36, 1) .15s both; }
+  .hero-background { animation: hero-photo-enter 2s cubic-bezier(.22, 1, .36, 1) .15s both; }
   @keyframes hero-copy-enter {
     from { opacity: 0; transform: translateX(-100vw); }
     to { opacity: 1; transform: translateX(0); }
